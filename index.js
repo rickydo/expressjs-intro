@@ -12,7 +12,9 @@ app.get('/blog/*.html', (req, res) => {
 
 app.route('/form')
   .get((req, res) => {
-    res.send('You would see a FORM');
+    // res.send('You would see a FORM');
+    // __dirname returns the current directory
+    res.sendFile(__dirname + '/private/form.html');
   })
   .post((req, res) => {
     res.send('This is the results');
