@@ -11,10 +11,10 @@ app.get('/blog/*.html', (req, res) => {
 });
 
 app.route('/form')
-  .get((res, req) => {
+  .get((req, res) => {
     res.send('You would see a FORM');
   })
-  .post((res, req) => {
+  .post((req, res) => {
     res.send('This is the results');
   })
 
