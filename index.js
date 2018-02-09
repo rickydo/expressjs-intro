@@ -25,8 +25,17 @@ app.route('/form')
     res.send(req.body.name + ', This is the results');
   })
 
-
+// add in error handling
+// capture anything that wasnt captured yet
+// this is why it's at the bottom after all the routes above
+// there is no next to be called after this function
+app.use((req, res, next) => {
+  res.status(404).send("Sorry can't find this page");
+})
 
 app.listen(3006, () => {
   console.log('We are running on port 3006');
 })
+
+
+// expressjs doesn't know what error is
